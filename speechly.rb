@@ -5,16 +5,21 @@
 class Speechly < Formula
   desc ""
   homepage "https://www.speechly.com/"
-  version "0.4.1"
+  version "0.4.2"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/speechly/cli/releases/download/v0.4.1/speechly_0.4.1_macOS_x86_64.tar.gz"
-    sha256 "c5b389dad4c16a3d456d275f48d3d85c52dc3bea0a9d7a843a2c8f76f50f08a4"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/speechly/cli/releases/download/v0.4.2/speechly_0.4.2_macOS_x86_64.tar.gz"
+      sha256 "fe4550e83b50440bc8cfaa2dc9aa3fd549eb36344e5a5b98f0597c0c38fc77e2"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/speechly/cli/releases/download/v0.4.1/speechly_0.4.1_Linux_x86_64.tar.gz"
-    sha256 "d13ca418389a6d3034937f6ba93f99b51ce569cbd6a75b63b2b6aa863d062367"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/speechly/cli/releases/download/v0.4.2/speechly_0.4.2_Linux_x86_64.tar.gz"
+      sha256 "895a5be0b59f7f8c0e62c33ac5fefcba2d5861df482f20bec3246b7e3b7ce514"
+    end
   end
 
   def install
