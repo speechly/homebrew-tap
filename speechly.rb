@@ -5,20 +5,20 @@
 class Speechly < Formula
   desc ""
   homepage "https://www.speechly.com/"
-  version "0.5.2"
+  version "0.5.3"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.5.2/speechly_0.5.2_macOS_x86_64.tar.gz"
-      sha256 "cff7f52822ebde59685a58de7eb886d226de89d5057d55d402125a4358822aa8"
+      url "https://github.com/speechly/cli/releases/download/v0.5.3/speechly_0.5.3_macOS_x86_64.tar.gz"
+      sha256 "a86ad98fc14275088c233875d3a1d90e988d3478ba2dfd272ec88865fa8ac12a"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.5.2/speechly_0.5.2_Linux_x86_64.tar.gz"
-      sha256 "0d854b7a2046fbedff0c3414b90a5f941092b7834ea3d038f067a9c50aaa251c"
+      url "https://github.com/speechly/cli/releases/download/v0.5.3/speechly_0.5.3_Linux_x86_64.tar.gz"
+      sha256 "91e211352e69facf3d27156fe7d89aa97f443e71630584a35a1aa318f2d3b860"
     end
   end
 
