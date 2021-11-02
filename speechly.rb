@@ -5,24 +5,43 @@
 class Speechly < Formula
   desc ""
   homepage "https://www.speechly.com/"
-  version "0.5.4"
-  bottle :unneeded
+  version "0.5.5"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/speechly/cli/releases/download/v0.5.5/speechly_0.5.5_macOS_arm64.tar.gz"
+      sha256 "d795893e086707df985f3ffa4365e1c9af8831d9497c4470edfc7f35bb3b12dd"
+
+      def install
+        bin.install "speechly"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.5.4/speechly_0.5.4_macOS_x86_64.tar.gz"
-      sha256 "b3ebb80203eb54777a93e99d439d8bae06632822bb0229faa18874d8a443d123"
+      url "https://github.com/speechly/cli/releases/download/v0.5.5/speechly_0.5.5_macOS_x86_64.tar.gz"
+      sha256 "1b63493f90a4ed2999e7bec8801d50e8f2622d7d838802140d05f8d9c01067c2"
+
+      def install
+        bin.install "speechly"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.5.4/speechly_0.5.4_Linux_x86_64.tar.gz"
-      sha256 "cf51fb20d2465b198398a6d771364be34c62edf2bc1972be10325f99e867ebb0"
-    end
-  end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/speechly/cli/releases/download/v0.5.5/speechly_0.5.5_Linux_arm64.tar.gz"
+      sha256 "5d75d50fcaf8f4d6e7482e391391cad1332838c31d5dc3ff21fa423abbdca30b"
 
-  def install
-    bin.install "speechly"
+      def install
+        bin.install "speechly"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/speechly/cli/releases/download/v0.5.5/speechly_0.5.5_Linux_x86_64.tar.gz"
+      sha256 "afb1937118841d9694c3a31b6b901d40a3105e77a06b676ced2e98ef6874abf2"
+
+      def install
+        bin.install "speechly"
+      end
+    end
   end
 end
