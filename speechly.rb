@@ -5,20 +5,20 @@
 class Speechly < Formula
   desc ""
   homepage "https://www.speechly.com/"
-  version "0.8.1"
+  version "0.8.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/speechly/cli/releases/download/v0.8.1/speechly_0.8.1_macOS_arm64.tar.gz"
-      sha256 "4bb449fac29b565c0dc0d87cb4720f85cebb4d6b0570c72701168c302c8ac8fb"
+    if Hardware::CPU.intel?
+      url "https://github.com/speechly/cli/releases/download/v0.8.2/speechly_0.8.2_macOS_x86_64.tar.gz"
+      sha256 "7f606266b374e4598bb0449b882b7b92f879f419517b44f92a2917bfe94db3ca"
 
       def install
         bin.install "speechly"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.8.1/speechly_0.8.1_macOS_x86_64.tar.gz"
-      sha256 "767b6b2aa042e1b387dad8a42230c946439fc8654904fec14ffc7ec293d94164"
+    if Hardware::CPU.arm?
+      url "https://github.com/speechly/cli/releases/download/v0.8.2/speechly_0.8.2_macOS_arm64.tar.gz"
+      sha256 "cd8c330f4bb2a897c6ad7bf004b156c0fa4f6681922f3d31077f1ef1e452e85c"
 
       def install
         bin.install "speechly"
@@ -28,16 +28,16 @@ class Speechly < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.8.1/speechly_0.8.1_Linux_x86_64.tar.gz"
-      sha256 "5d11477e4c73808a33f04c86df3e04f4cfc0f6f193b33f7a432272cb6c0e8739"
+      url "https://github.com/speechly/cli/releases/download/v0.8.2/speechly_0.8.2_Linux_x86_64.tar.gz"
+      sha256 "69f1c71163a2e650d55010b20efc712b889c9516dd5128985141088814cb0acb"
 
       def install
         bin.install "speechly"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/speechly/cli/releases/download/v0.8.1/speechly_0.8.1_Linux_arm64.tar.gz"
-      sha256 "54e3bd7215e5e8857f559d78e0edf6bb70e1f0a16addd7086ac16d7bae8f1953"
+      url "https://github.com/speechly/cli/releases/download/v0.8.2/speechly_0.8.2_Linux_arm64.tar.gz"
+      sha256 "cc059693cead1a36dcc747ceadda6845234bfea320149256e1f48949b23dd055"
 
       def install
         bin.install "speechly"
