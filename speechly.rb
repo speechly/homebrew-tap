@@ -5,20 +5,20 @@
 class Speechly < Formula
   desc ""
   homepage "https://www.speechly.com/"
-  version "0.11.0"
+  version "0.11.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/speechly/cli/releases/download/v0.11.0/speechly_0.11.0_macOS_arm64.tar.gz"
-      sha256 "6dfa58d752e5cfec71455656d1c9d8427283cc275c86cb57f3662520c82c6485"
+    if Hardware::CPU.intel?
+      url "https://github.com/speechly/cli/releases/download/v0.11.1/speechly_0.11.1_macOS_x86_64.tar.gz"
+      sha256 "ce6a947ac68e86d118fd7131ae97940922230fd7d3dc10c6e8bbfd7e2aaa767e"
 
       def install
         bin.install "speechly"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.11.0/speechly_0.11.0_macOS_x86_64.tar.gz"
-      sha256 "fe24ecde93958eba9412507f02c1bbc66786a5f5354847aaf21f4e4d2dd12d16"
+    if Hardware::CPU.arm?
+      url "https://github.com/speechly/cli/releases/download/v0.11.1/speechly_0.11.1_macOS_arm64.tar.gz"
+      sha256 "29414187e03adea7717ab70615be5fc7d37ff886478406265f1d0e8bdf03f5e7"
 
       def install
         bin.install "speechly"
@@ -27,17 +27,17 @@ class Speechly < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/speechly/cli/releases/download/v0.11.0/speechly_0.11.0_Linux_x86_64.tar.gz"
-      sha256 "59cca2ba936a90903c061ff1cdc482794156e0eaf16000c3a59e206860f0e54a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/speechly/cli/releases/download/v0.11.1/speechly_0.11.1_Linux_arm64.tar.gz"
+      sha256 "30b20e142862238e1b34f43192c430cb9e940fd3f0a71f07a93dfff40b70a03c"
 
       def install
         bin.install "speechly"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/speechly/cli/releases/download/v0.11.0/speechly_0.11.0_Linux_arm64.tar.gz"
-      sha256 "8e884173b1fff1a87f6c142223ebe4178f68b3b8fecc90c2d32187df66fff6f1"
+    if Hardware::CPU.intel?
+      url "https://github.com/speechly/cli/releases/download/v0.11.1/speechly_0.11.1_Linux_x86_64.tar.gz"
+      sha256 "84ebc1fdcc2b4762875860579c73a19e81f2daad456ebbf6407e393c83bbe639"
 
       def install
         bin.install "speechly"
